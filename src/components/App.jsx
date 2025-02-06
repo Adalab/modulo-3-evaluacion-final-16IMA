@@ -8,7 +8,7 @@ function App() {
     <>
       <Header></Header>
       <main>
-                <section className="list">
+        <section className="list">
           <ul className="list__ul">
             <li className="list__container">
               <img src="" alt="" className="list__container-movieImg" />
