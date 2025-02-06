@@ -1,4 +1,4 @@
-function Filter() {
+function Filter(handleInputFilterTitle, movieTitle) {
   return (
     <form className="search">
       <label className="label__text" htmlFor="name-select">
@@ -10,8 +10,9 @@ function Filter() {
         className="search__movie"
         placeholder="Filter by title"
         id="name-select"
-        value=""
+        value={movieTitle}
         autoComplete="off"
+        onInput={handleInputFilterTitle}
       />
       <label className="label__text" htmlFor="pet-select">
         Year
