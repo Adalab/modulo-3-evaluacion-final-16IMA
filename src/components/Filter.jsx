@@ -1,10 +1,18 @@
 function Filter() {
   return (
-    <section className="search">
+    <form className="search">
       <label className="label__text" htmlFor="name-select">
         Movie
       </label>
-      <input type="search" className="search__movie" id="name-select" />
+      <input
+        type="search"
+        name="search"
+        className="search__movie"
+        placeholder="Filter by title"
+        id="name-select"
+        value=""
+        autoComplete="off"
+      />
       <label className="label__text" htmlFor="pet-select">
         Year
       </label>
@@ -16,7 +24,7 @@ function Filter() {
         <option value="2020">2020</option>
         <option value="2025">2025</option>
       </select>
-    </section>
+    </form>
   );
 }
 
