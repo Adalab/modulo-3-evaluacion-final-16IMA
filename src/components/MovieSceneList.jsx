@@ -5,7 +5,7 @@ function MovieSceneList({movie}) {
   return (
     <ul className="list__ul">
       {movie.map((oneMovie) => (
-        <li key={oneMovie.movie + oneMovie.year} className="list__container">
+        <li key={oneMovie.index} className="list__container">
           <MovieSceneItem oneMovie={oneMovie}></MovieSceneItem>
         </li>
       ))}

@@ -10,30 +10,32 @@ function App() {
   // VARIABLES DE ESTADO
 
   const [movie, setMovie] = useState([]);
-  const[movieTitle, setMovieTitle] = useState("");  
+  const[movieTitle, setMovieTitle] = useState("");
+  const[movieYear, setMovieYear] = useState("");  
 
   // Eventos
 
-  const handleInputFilterTitle = (event) => {
-    event.preventDefault();
-    setMovieTitle(event.target.value);
-    fetch(`https://owen-wilson-wow-api.onrender.com/wows/random?movie=${movieTitle}`)
-        .then(response => response.json())
-        .then(dataJson => {
-          setMovie(dataJson);
-        });
-        //tienes que pasar el fetch como variable para que se renderice en sceneitem o list
-  };
+  const handleInputFilterTitle = (ev) => {
+    ev.preventDefault();
+    setMovieTitle(ev.target.value);
+    
+    };
+  
+  const handleSelectFilterYear = (ev) => {
+    ev.preventDefault();
+    setMovieYear(ev.target.value);
+      
+    };
   
   //Fetch
 
   useEffect(() => {
-    fetch("https://owen-wilson-wow-api.onrender.com/wows/random?results=50")
+    fetch(`https://owen-wilson-wow-api.onrender.com/wows/random?results=50&movie=${movieTitle}`)
       .then(response => response.json())
       .then(dataJson => {
         setMovie(dataJson);
       });
-  }, []);
+  }, [movieTitle]);
 
   
   
@@ -41,7 +43,7 @@ function App() {
     <>
       <Header></Header>
       <main>
-        <Filter movieTitle={movieTitle} handleInputFilterTitle={handleInputFilterTitle}></Filter>
+        <Filter movieTitle={movieTitle} handleInputFilterTitle={handleInputFilterTitle} movie={movie} handleSelectFilterYear={handleSelectFilterYear}></Filter>
         {movie.length === 0 ? (
           <p>No hay resultados</p>
         ) : (
