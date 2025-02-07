@@ -1,8 +1,8 @@
 import MovieYearList from "./MovieYearList";
 
-function Filter({handleInputFilterTitle, movieTitle, movie, handleSelectFilterYear}) {
+function Filter({handleInputFilterTitle, movieTitle, movie, handleSelectFilterYear, movieYear}) {
   return (
-    <form className="search" action="">
+    <div className="search" action="">
       <label className="label__text" htmlFor="name-select">
         Movie
       </label>
@@ -19,8 +19,8 @@ function Filter({handleInputFilterTitle, movieTitle, movie, handleSelectFilterYe
       <label className="label__text" htmlFor="pet-select">
         Year
       </label>
-      <MovieYearList movie={movie} handleSelectFilterYear={handleSelectFilterYear}></MovieYearList>
-    </form>
+      <MovieYearList movie={movie} handleSelectFilterYear={handleSelectFilterYear} ></MovieYearList>
+    </div>
   );
 }
 

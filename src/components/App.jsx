@@ -24,18 +24,19 @@ function App() {
   const handleSelectFilterYear = (ev) => {
     ev.preventDefault();
     setMovieYear(ev.target.value);
+    console.log(ev.target.value)
       
     };
   
   //Fetch
 
   useEffect(() => {
-    fetch(`https://owen-wilson-wow-api.onrender.com/wows/random?results=50&movie=${movieTitle}`)
+    fetch(`https://owen-wilson-wow-api.onrender.com/wows/random?results=50&movie=${movieTitle}&year=${movieYear}&sort=movie=desc`)
       .then(response => response.json())
       .then(dataJson => {
         setMovie(dataJson);
       });
-  }, [movieTitle]);
+  }, [movieTitle, movieYear]);
 
   
   
@@ -43,7 +44,7 @@ function App() {
     <>
       <Header></Header>
       <main>
-        <Filter movieTitle={movieTitle} handleInputFilterTitle={handleInputFilterTitle} movie={movie} handleSelectFilterYear={handleSelectFilterYear}></Filter>
+        <Filter movieTitle={movieTitle} handleInputFilterTitle={handleInputFilterTitle} movie={movie} handleSelectFilterYear={handleSelectFilterYear} ></Filter>
         {movie.length === 0 ? (
           <p>No hay resultados</p>
         ) : (
