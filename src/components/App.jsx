@@ -1,9 +1,8 @@
 //Imports
 
 import "../styles/App.scss";
-import "../components/Layout/Header";
-import Header from "../components/Layout/Header";
-import Footer from "../components/Layout/Footer";
+import Header from "./Layout/Header";
+import Footer from "./Layout/Footer";
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router";
 import HomePage from "./pages/HomePage";
@@ -14,6 +13,7 @@ function App() {
 
   const [movie, setMovie] = useState([]);
   const [movieTitle, setMovieTitle] = useState("");
+  const [movieYear, setMovieYear] = useState("");
 
   // Eventos
 
@@ -41,17 +41,14 @@ function App() {
       });
   }, [movieTitle, movieYear]);
 
-  
-  
-  }, []);
 
   return (
     <>
       <Header></Header>
       <main>
         <Routes>
-          <Route index element={<HomePage movie={movie} movieTitle={movieTitle} handleInputFilterTitle={handleInputFilterTitle}></HomePage>}></Route>
-          <Route path="DetailPage" element={<DetailPage></DetailPage>}></Route>
+          <Route index element={<HomePage movie={movie} movieTitle={movieTitle} handleInputFilterTitle={handleInputFilterTitle} handleSelectFilterYear={handleSelectFilterYear}/>}/>
+          <Route path="DetailPage" element={<DetailPage/>}/>
         </Routes>
       </main>
       <Footer></Footer>

@@ -1,11 +1,11 @@
 import MovieYearList from "./MovieYearList";
+import PropTypes from "prop-types";
 
 function Filter({
   handleInputFilterTitle,
   movieTitle,
   movie,
   handleSelectFilterYear,
-  movieYear,
 }) {
   return (
     <form>
@@ -34,5 +34,13 @@ function Filter({
     </form>
   );
 }
+
+Filter.propTypes = {
+  movie: PropTypes.array,
+  movieTitle: PropTypes.string,
+  handleInputFilterTitle: PropTypes.func,
+  handleSelectFilterYear: PropTypes.func,
+};
+
 
 export default Filter;
