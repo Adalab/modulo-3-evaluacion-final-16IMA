@@ -30,19 +30,7 @@ function App() {
       
     };
   
-  const handleInputFilterTitle = (event) => {
-    event.preventDefault();
-    setMovieTitle(event.target.value);
-    fetch(
-      `https://owen-wilson-wow-api.onrender.com/wows/random?movie=${movieTitle}`
-    )
-      .then((response) => response.json())
-      .then((dataJson) => {
-        setMovie(dataJson);
-      });
-    //tienes que pasar el fetch como variable para que se renderice en sceneitem o list
-  };
-
+  
   //Fetch
 
   useEffect(() => {
