@@ -1,6 +1,8 @@
-function Filter(handleInputFilterTitle, movieTitle) {
+import MovieYearList from "./MovieYearList";
+
+function Filter({handleInputFilterTitle, movieTitle, movie, handleSelectFilterYear, movieYear}) {
   return (
-    <form className="search">
+    <div className="search" action="">
       <label className="label__text" htmlFor="name-select">
         Movie
       </label>
@@ -12,20 +14,13 @@ function Filter(handleInputFilterTitle, movieTitle) {
         id="name-select"
         value={movieTitle}
         autoComplete="off"
-        onInput={handleInputFilterTitle}
+        onInput={handleInputFilterTitle}           
       />
       <label className="label__text" htmlFor="pet-select">
         Year
       </label>
-      <select name="year" id="year-select">
-        <option value="">All</option>
-        <option value="1990">1990</option>
-        <option value="2000">2000</option>
-        <option value="2010">2010</option>
-        <option value="2020">2020</option>
-        <option value="2025">2025</option>
-      </select>
-    </form>
+      <MovieYearList movie={movie} handleSelectFilterYear={handleSelectFilterYear} ></MovieYearList>
+    </div>
   );
 }
 

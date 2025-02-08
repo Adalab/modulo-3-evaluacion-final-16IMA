@@ -17,6 +17,19 @@ function App() {
 
   // Eventos
 
+  const handleInputFilterTitle = (ev) => {
+    ev.preventDefault();
+    setMovieTitle(ev.target.value);
+    
+    };
+  
+  const handleSelectFilterYear = (ev) => {
+    ev.preventDefault();
+    setMovieYear(ev.target.value);
+    console.log(ev.target.value)
+      
+    };
+  
   const handleInputFilterTitle = (event) => {
     event.preventDefault();
     setMovieTitle(event.target.value);
@@ -38,6 +51,10 @@ function App() {
       .then((dataJson) => {
         setMovie(dataJson);
       });
+  }, [movieTitle, movieYear]);
+
+  
+  
   }, []);
 
   return (
