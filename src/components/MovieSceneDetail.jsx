@@ -6,7 +6,10 @@ function MovieSceneDetail({findSceneMovie}) {
 const params = useParams();
 
 const scene = findSceneMovie(params.timestamp);
-console.log(scene);
+//const scenes = [];
+//scenes.push(scene);
+
+//localStorage.setItem('detailScenes', JSON.stringify(scenes));
 
   return (
     <>

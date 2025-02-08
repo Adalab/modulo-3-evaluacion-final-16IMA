@@ -7,7 +7,9 @@ function MovieSceneList({ movie, movieTitle }) {
   if (movie.length === 0) {
     return <p>No hay resultados con el título {movieTitle}</p>;
   }
+
   localStorage.setItem('movieScenes', JSON.stringify(movie));
+  
   return (
     <ul className="list__ul">
       {movie.map((oneMovie) => (

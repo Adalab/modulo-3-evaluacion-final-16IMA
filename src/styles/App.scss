@@ -1,2 +1,24 @@
 @use 'core/reset';
 
+.list{
+    &__ul{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100vw;
+    }
+    &__container{
+        width: 350px;
+        height: auto;
+        background-color: red;
+        
+        &-movieImg{
+            width: 400px;
+            height: auto;
+            
+        }
+    }
+    
+}
+
