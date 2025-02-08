@@ -15,6 +15,7 @@ function MovieYearList({ movie, handleSelectFilterYear }) {
 
 MovieYearList.propTypes = {
     movie: PropTypes.array,
+    handleSelectFilterYear: PropTypes.func,
 };
 
 export default MovieYearList;

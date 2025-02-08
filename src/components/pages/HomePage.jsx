@@ -6,13 +6,12 @@ function HomePage({ movie, movieTitle, handleInputFilterTitle, handleSelectFilte
 
   return (
     <>
-      <Filter
-        movieTitle={movieTitle}
+      <Filter movieTitle={movieTitle} 
         handleInputFilterTitle={handleInputFilterTitle}
         movie={movie}
         handleSelectFilterYear={handleSelectFilterYear}
-        movieYear={movieYear}
-      ></Filter>;
+        movieYear={movieYear}        
+      ></Filter>
       {
         movie.length === 0 ? (
           <p>No hay resultados</p>

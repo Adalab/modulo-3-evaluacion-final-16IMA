@@ -1,12 +1,15 @@
 import MovieYearList from "./MovieYearList";
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 
-function Filter({
-  handleInputFilterTitle,
-  movieTitle,
-  movie,
-  handleSelectFilterYear,
-}) {
+function Filter({ handleInputFilterTitle, movieTitle, movie, handleSelectFilterYear}) {
+
+  useEffect(() => {
+    console.log("Props en Filter:", { movieTitle, handleInputFilterTitle, movie, handleSelectFilterYear });
+  }, [movieTitle, handleInputFilterTitle, movie, handleSelectFilterYear]);
+
+
+
   return (
     <form>
       <div className="search" action="">
@@ -23,7 +26,7 @@ function Filter({
           autoComplete="off"
           onInput={handleInputFilterTitle}
         />
-        <label className="label__text" htmlFor="pet-select">
+        <label className="label__text" htmlFor="year-select">
           Year
         </label>
         <MovieYearList

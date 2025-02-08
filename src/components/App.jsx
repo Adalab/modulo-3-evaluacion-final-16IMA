@@ -14,6 +14,7 @@ function App() {
   const [movie, setMovie] = useState([]);
   const [movieTitle, setMovieTitle] = useState("");
   const [movieYear, setMovieYear] = useState("");
+  //const[currentScene, setCurrentScene] = useState({});
 
   // Eventos
 
@@ -30,11 +31,18 @@ function App() {
       
     };
   
+    /*const handleCurrentScene = (ev) => {
+      ev.preventDefault();
+      setCurrentScene(ev.target.value);
+      console.log(ev.target.value)
+        
+      };*/
+   
   
   //Fetch
 
   useEffect(() => {
-    fetch("https://owen-wilson-wow-api.onrender.com/wows/random?results=50")
+    fetch(`https://owen-wilson-wow-api.onrender.com/wows/random?results=50&movie=${movieTitle}&year=${movieYear}`)
       .then((response) => response.json())
       .then((dataJson) => {
         setMovie(dataJson);
@@ -48,7 +56,7 @@ function App() {
       <main>
         <Routes>
           <Route index element={<HomePage movie={movie} movieTitle={movieTitle} handleInputFilterTitle={handleInputFilterTitle} handleSelectFilterYear={handleSelectFilterYear}/>}/>
-          <Route path="DetailPage" element={<DetailPage/>}/>
+          <Route path="detail/:movie-timestamp" element={<DetailPage/>}/>
         </Routes>
       </main>
       <Footer></Footer>

@@ -1,18 +1,19 @@
 import PropTypes from "prop-types";
 
-function MovieSceneDetail({ oneMovie }) {
+function MovieSceneDetail({oneMovie}) {
   return (
     <>
+     <h1>hola</h1>
       <section>
         <img
           src={oneMovie.poster}
           alt={"Poster of" + oneMovie.movie}
-          className="list__container-movieImg"
+          className=""
         />
-        <p className="list__container-movieData">
-          {oneMovie.movie} {oneMovie.year}
-        </p>
-        <h3 className="list__container-wowLine">{oneMovie.full_line}</h3>
+        <h1 className="">{oneMovie.movie}</h1>
+        <h2 className="">{oneMovie.full_line}</h2>
+        <h2 className="">Director: {oneMovie.director}</h2>
+        <h3 className=""><a>{oneMovie.audio}</a></h3>
       </section>
     </>
   );
