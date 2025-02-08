@@ -1,10 +1,10 @@
 import MovieYearList from "./MovieYearList";
 import PropTypes from "prop-types";
 
-function Filter({ handleInputFilterTitle, movieTitle, movie, handleSelectFilterYear}) {
+function Filter({ handleInputFilterTitle, movieTitle, movie, handleSelectFilterYear, handleSubmit}) {
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="search" action="">
         <label className="label__text" htmlFor="name-select">
           Movie
@@ -18,6 +18,7 @@ function Filter({ handleInputFilterTitle, movieTitle, movie, handleSelectFilterY
           value={movieTitle}
           autoComplete="off"
           onInput={handleInputFilterTitle}
+          
         />
         <label className="label__text" htmlFor="year-select">
           Year
@@ -36,6 +37,7 @@ Filter.propTypes = {
   movieTitle: PropTypes.string,
   handleInputFilterTitle: PropTypes.func,
   handleSelectFilterYear: PropTypes.func,
+  handleSubmit: PropTypes.func,
 };
 
 

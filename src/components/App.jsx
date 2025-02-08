@@ -20,32 +20,36 @@ function App() {
   // Eventos
 
   const handleInputFilterTitle = (ev) => {
-    ev.preventDefault();
     setMovieTitle(ev.target.value);
 
   };
 
   const handleSelectFilterYear = (ev) => {
-    ev.preventDefault();
     setMovieYear(ev.target.value);
-    console.log(ev.target.value)
 
   };
+
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
+    
+    
 
   // Funciones
 
   const findSceneMovie = (timestamp) => {
     return movie.find(oneScene => oneScene.timestamp === timestamp);
   }
-
+  
     //Fetch
 
     useEffect(() => {
       fetch(`https://owen-wilson-wow-api.onrender.com/wows/random?results=50&movie=${movieTitle}&year=${movieYear}`)
         .then((response) => response.json())
         .then((dataJson) => {
-          setMovie(dataJson);
-        });
+          const sortedMovies = dataJson.sort((a, b) => a.movie.localeCompare(b.movie));
+          setMovie(sortedMovies);
+       });
     }, [movieTitle, movieYear]);
 
 
@@ -54,7 +58,7 @@ function App() {
         <Header></Header>
         <main>
           <Routes>
-            <Route index element={<HomePage movie={movie} movieTitle={movieTitle} handleInputFilterTitle={handleInputFilterTitle} handleSelectFilterYear={handleSelectFilterYear} />} />
+            <Route index element={<HomePage movie={movie} movieTitle={movieTitle} handleInputFilterTitle={handleInputFilterTitle} handleSelectFilterYear={handleSelectFilterYear} handleSubmit={handleSubmit} />} />
             <Route path="detail/:timestamp" element={<DetailPage findSceneMovie={findSceneMovie}/>} />
           </Routes>
         </main>

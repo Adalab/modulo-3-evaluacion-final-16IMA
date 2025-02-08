@@ -2,7 +2,7 @@ import Filter from "../Filter";
 import MovieSceneList from "../MovieSceneList";
 import PropTypes from "prop-types";
 
-function HomePage({ movie, movieTitle, handleInputFilterTitle, handleSelectFilterYear, movieYear }) {
+function HomePage({ movie, movieTitle, handleInputFilterTitle, handleSelectFilterYear, movieYear, handleSubmit}) {
 
   return (
     <>
@@ -10,15 +10,10 @@ function HomePage({ movie, movieTitle, handleInputFilterTitle, handleSelectFilte
         handleInputFilterTitle={handleInputFilterTitle}
         movie={movie}
         handleSelectFilterYear={handleSelectFilterYear}
-        movieYear={movieYear}        
-      ></Filter>
-      {
-        movie.length === 0 ? (
-          <p>No hay resultados</p>
-        ) : (
-          <MovieSceneList movie={movie}></MovieSceneList>
-        )
-  }
+        movieYear={movieYear}  
+        handleSubmit={handleSubmit}      
+      ></Filter>  
+      <MovieSceneList movie={movie} movieTitle={movieTitle}></MovieSceneList>  
     </>
   );
 }
@@ -29,6 +24,7 @@ HomePage.propTypes = {
   handleInputFilterTitle: PropTypes.func,
   handleSelectFilterYear: PropTypes.func,
   movieYear: PropTypes.number,
+  handleSubmit: PropTypes.func,
 };
 
 export default HomePage;
