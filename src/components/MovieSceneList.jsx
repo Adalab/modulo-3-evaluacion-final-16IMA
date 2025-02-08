@@ -7,7 +7,7 @@ function MovieSceneList({ movie }) {
     <ul className="list__ul">
       {movie.map((oneMovie) => (
         <li key={oneMovie.movie + oneMovie.timestamp} className="list__container">
-          <Link to={"detail/"+oneMovie.movie+"-"+oneMovie.timestamp}>
+          <Link to={`/detail/${oneMovie.timestamp}`}>
             <MovieSceneItem oneMovie={oneMovie}></MovieSceneItem>
           </Link>
         </li>

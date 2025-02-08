@@ -1,14 +1,7 @@
 import MovieYearList from "./MovieYearList";
 import PropTypes from "prop-types";
-import { useEffect } from "react";
 
 function Filter({ handleInputFilterTitle, movieTitle, movie, handleSelectFilterYear}) {
-
-  useEffect(() => {
-    console.log("Props en Filter:", { movieTitle, handleInputFilterTitle, movie, handleSelectFilterYear });
-  }, [movieTitle, handleInputFilterTitle, movie, handleSelectFilterYear]);
-
-
 
   return (
     <form>

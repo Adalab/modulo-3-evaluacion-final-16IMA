@@ -1,26 +1,32 @@
 import PropTypes from "prop-types";
+import { useParams } from "react-router";
 
-function MovieSceneDetail({oneMovie}) {
+
+function MovieSceneDetail({findSceneMovie}) {
+const params = useParams();
+
+const scene = findSceneMovie(params.timestamp);
+console.log(scene);
+
   return (
     <>
-     <h1>hola</h1>
       <section>
         <img
-          src={oneMovie.poster}
-          alt={"Poster of" + oneMovie.movie}
+          src={scene.poster}
+          alt={"Poster of" +  scene.movie }
           className=""
         />
-        <h1 className="">{oneMovie.movie}</h1>
-        <h2 className="">{oneMovie.full_line}</h2>
-        <h2 className="">Director: {oneMovie.director}</h2>
-        <h3 className=""><a>{oneMovie.audio}</a></h3>
+        <h1 className="">{scene.movie}</h1>
+        <h2 className="">{scene.full_line}</h2>
+        <h2 className="">Director: {scene.director}</h2>
+        <h3 className=""><a href={scene.audio}>Escuchar audio</a></h3>
       </section>
     </>
   );
 }
 
 MovieSceneDetail.propTypes = {
-  oneMovie: PropTypes.object,
+  findSceneMovie: PropTypes.func,
 };
 
 export default MovieSceneDetail;
