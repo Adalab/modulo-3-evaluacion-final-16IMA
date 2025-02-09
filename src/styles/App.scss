@@ -1,7 +1,17 @@
-body{
+html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+}
+
+main {
+    width: 100vw; 
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 a, li {
@@ -28,11 +38,6 @@ a, li {
 }
     
 
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
 form{
     margin-top: 10px;
@@ -52,12 +57,16 @@ form{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
         padding: 0;
-        margin: 0;      
+        margin: 0;  
+        width: 100vw;
+        max-width: 100%;
+        gap: 30px;
+        align-self: center;
+        
     }
     &__container{
         height: auto;
         background-color:  #333;
-        margin: 10px;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -67,9 +76,9 @@ form{
     
               
         &-movieImg{
-            width: 400px;
             height: auto;
             max-width: 100%;
+            object-fit:cover;
             
         }
         &-movieData{
