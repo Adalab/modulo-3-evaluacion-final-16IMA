@@ -1,24 +1,99 @@
-@use 'core/reset';
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a, li {
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+}
+
+.header {
+    background-color: #333;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Press Start 2P";
+    color: white;
+    margin-bottom: 40px;
+    width: 100%;
+    &:hover{
+        -webkit-text-stroke-width: 0.2px;
+        -webkit-text-stroke-color: black;
+        font-size: 20px;
+                }
+}
+    
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
 
 .list{
+    
     &__ul{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+        padding: 0;
+        margin: 0;      
     }
     &__container{
-        width: 350px;
         height: auto;
-        background-color: red;
-        
+        background-color:  #333;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        &:hover{
+            background-color: #444;
+        }
+    
+              
         &-movieImg{
             width: 400px;
             height: auto;
+            max-width: 100%;
             
         }
+        &-movieData{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            padding: 10px;
+            font-family: "Press Start 2P";
+            color: white;
+            font-size: 11px;
+                    
+        }
+        &-wowLine{
+            color: white;
+            font-family: "Press Start 2P";
+            font-style: italic;
+            text-align: center;
+            font-size: 18px;
+            &:hover{
+            -webkit-text-stroke-width: 0.2px;
+            -webkit-text-stroke-color: black;
+            font-size: 20px;
+                    }
+        }
     }
-    
 }
-

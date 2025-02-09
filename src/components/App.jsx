@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router";
 import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
 
+
 function App() {
   
   // Variables de estado

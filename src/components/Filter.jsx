@@ -6,7 +6,8 @@ function Filter({ handleInputFilterTitle, movieTitle, movie, handleSelectFilterY
   return (
     <form onSubmit={handleSubmit}>
       <div className="search" action="">
-        <label className="label__text" htmlFor="name-select">
+        <p className="search__explanation">Did you know that Owen Wilson says "Wow!" in every movie he appears in? Here, you can explore the scenes from each of his films where we can hear his brilliant "Wow!"</p>
+        <label className="search__label-text" htmlFor="name-select">
           Movie
         </label>
         <input
@@ -20,7 +21,7 @@ function Filter({ handleInputFilterTitle, movieTitle, movie, handleSelectFilterY
           onInput={handleInputFilterTitle}
           
         />
-        <label className="label__text" htmlFor="year-select">
+        <label className="search__label-text" htmlFor="year-select">
           Year
         </label>
         <MovieYearList
