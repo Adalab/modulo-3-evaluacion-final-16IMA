@@ -37,6 +37,8 @@ li {
     color: white;
     width: 100%;
     text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
 
     &:hover {
         -webkit-text-stroke-width: 0.2px;
@@ -174,6 +176,7 @@ form {
     }
 
     &__text-container {
+        margin-top: 20px;
         margin-left: 20px;
         font-family: "Press Start 2P";
         color: white;
@@ -182,6 +185,7 @@ form {
         align-items: center;
         justify-content: center;
         line-height: 30px;
+        text-align: center;
     }
 
     &__movie {
@@ -210,6 +214,8 @@ form {
         font-size: 14px;
         color: black;
         text-decoration: underline;
+        margin-top: 20px;
+        margin-bottom: 20px;
         &:hover {
             font-size: 16px;
         }
@@ -294,6 +300,7 @@ form {
         display: flex;
         align-items: center;
         justify-content: center;
+
     &__container {
         display: flex;
         flex-direction: column;
