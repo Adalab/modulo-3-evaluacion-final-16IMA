@@ -3,6 +3,8 @@
 # OWEN WILSON'S "WOW" 🎬✨
 Una aplicación web que permite explorar las escenas de las películas en las que Owen Wilson dice su famoso "Wow!". Puedes buscar por título de película y año de estreno, ver detalles de las escenas y escuchar el audio de cada momento icónico. 😲🎥
 
+Puedes visualizar el proyecto a través del siguiente enlace: https://beta.adalab.es/modulo-3-evaluacion-final-16IMA/
+
 ## 📑 Tabla de Contenidos
 
 Descripción
