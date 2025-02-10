@@ -5,7 +5,7 @@ import { Link } from "react-router";
 function MovieSceneList({ movie, movieTitle }) {
 
   if (movie.length === 0) {
-    return <p>No hay resultados con el título {movieTitle}</p>;
+    return <p className="error-text">No hay resultados con el título {movieTitle}</p>;
   }
 
   localStorage.setItem('movieScenes', JSON.stringify(movie));

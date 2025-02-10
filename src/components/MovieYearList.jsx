@@ -4,7 +4,7 @@ function MovieYearList({ movie, handleSelectFilterYear }) {
     const uniqueYears = [...new Set(movie.map(i => i.year))];
     
     return (
-        <select name="year" id="year-select" onChange={handleSelectFilterYear}>
+        <select className="search__year" name="year" id="year-select" onChange={handleSelectFilterYear}>
             <option value="">All</option>
             {uniqueYears.sort().map((oneYear) => (
                 <option key={oneYear} value={oneYear}>{oneYear}</option>
