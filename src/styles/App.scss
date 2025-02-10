@@ -141,6 +141,7 @@ form {
             font-family: "Press Start 2P";
             color: white;
             font-size: 11px;
+            line-height: 20px;
 
         }
 
@@ -150,6 +151,8 @@ form {
             font-style: italic;
             text-align: center;
             font-size: 18px;
+            line-height: 20px;
+            margin-bottom: 20px;
 
             &:hover {
                 -webkit-text-stroke-width: 0.2px;
@@ -249,6 +252,10 @@ form {
     margin-top: 100px;
     text-align: center;
     line-height: 20px;
+    & p{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
     
 
     &:hover {
