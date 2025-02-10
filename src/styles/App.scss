@@ -166,6 +166,7 @@ form {
 .detail {
     margin-top: 50px;
     margin-bottom: 50px;
+    height: 100%;
 
     &__container {
         display: flex;
@@ -252,6 +253,7 @@ form {
     margin-top: 100px;
     text-align: center;
     line-height: 20px;
+    height: auto;
     & p{
         padding-top: 10px;
         padding-bottom: 10px;
