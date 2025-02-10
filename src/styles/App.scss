@@ -1,5 +1,3 @@
-@import "./core/variables";
-
 body, html {
     box-sizing: border-box;
     margin: 0;
@@ -257,7 +255,8 @@ form {
     text-decoration: underline;
 }
 
-@include mobile {
+
+@media (min-width: 768px) and (max-width: 1024px) {
     .search {
         justify-content: center;
         align-items: center;
