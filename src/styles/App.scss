@@ -23,7 +23,6 @@ li {
 
 .header {
     background-color: #333;
-    padding: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,18 +91,19 @@ form {
 }
 
 .list {
+    margin-left: 30px;
+    margin-right: 10px;
 
     &__ul {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         padding: 0;
-        margin: 0;
         width: 100vw;
-        max-width: 100%;
+        max-width: 1200px;
         gap: 30px;
         align-self: center;
         margin-inline: auto;
-        margin-left: 15px;
+        
     }
 
     &__container {
@@ -257,7 +257,7 @@ form {
 }
 
 
-@media (min-width: 250px) and (max-width: 1024px) {
+@media (max-width: 768px) {
     .search {
         justify-content: center;
         align-items: center;
@@ -288,12 +288,15 @@ form {
         width: 100vw;
         display: flex;
         align-items: center;
+        justify-content: center;
+        margin-left: 30px;
+        margin-right: 10px;
     &__container {
         display: flex;
         flex-direction: column;
         align-items: center;
+        max-width: 280px;
         justify-content: center;
-        margin-left: 10%;
         }
         &__img {
             height: auto;
